@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,76 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Food_Picker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="diningImage" translatesAutoresizingMaskIntoConstraints="NO" id="S5c-sY-2h8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pTv-cA-Afu">
+                                <rect key="frame" x="97.5" y="542" width="180" height="50"/>
+                                <color key="backgroundColor" red="0.27843137254901962" green="0.84313725490196079" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="BQ9-kc-qFm"/>
+                                    <constraint firstAttribute="height" constant="50" id="Nlz-oN-8a1"/>
+                                </constraints>
+                                <state key="normal" title="Choose A Food">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapChooseButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ag1-m3-xfu"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's choice is ..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5M4-hL-tq7">
+                                <rect key="frame" x="20" y="51" width="335" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="72" id="NEN-qe-UPF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="American" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5YY-AY-hPF">
+                                <rect key="frame" x="20" y="131" width="335" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="72" id="kPO-st-CNw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5M4-hL-tq7" secondAttribute="trailing" constant="20" id="3Tu-jb-ONK"/>
+                            <constraint firstItem="pTv-cA-Afu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6Oy-dU-Nmm"/>
+                            <constraint firstItem="5M4-hL-tq7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="31" id="8uT-ub-2E8"/>
+                            <constraint firstItem="5YY-AY-hPF" firstAttribute="top" secondItem="5M4-hL-tq7" secondAttribute="bottom" constant="8" id="PYP-8i-eRN"/>
+                            <constraint firstItem="S5c-sY-2h8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aF6-Kk-skc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5YY-AY-hPF" secondAttribute="trailing" constant="20" id="hm8-4e-9bD"/>
+                            <constraint firstItem="5YY-AY-hPF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="jad-Rm-22s"/>
+                            <constraint firstItem="S5c-sY-2h8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="pGh-or-rqD"/>
+                            <constraint firstItem="S5c-sY-2h8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="vHZ-Hf-1bx"/>
+                            <constraint firstItem="S5c-sY-2h8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="vpQ-5u-HVv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pTv-cA-Afu" secondAttribute="bottom" constant="75" id="xjI-tu-qfP"/>
+                            <constraint firstItem="5M4-hL-tq7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="zGD-vO-gNs"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="chooseButton" destination="pTv-cA-Afu" id="chW-l3-uTW"/>
+                        <outlet property="foodTypeLabel" destination="5YY-AY-hPF" id="4xy-9a-qMM"/>
+                        <outlet property="todaysChoiceLabel" destination="5M4-hL-tq7" id="PYq-Hx-OVu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="diningImage" width="1770" height="2129"/>
+    </resources>
 </document>
